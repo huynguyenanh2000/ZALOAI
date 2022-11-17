@@ -18,10 +18,10 @@ class PixWiseDataset():
     def __len__(self):
         return len(self.data)
 
-    def __getitem__(self, idx):
+    def __getitem__(self, ind):
 
-        if torch.is_tensor(idx):
-            idx = idx.tolist()
+        if torch.is_tensor(ind):
+            ind = ind.tolist()
 
         img_name = self.data.iloc[ind]['name']
         img = Image.open(img_name)
